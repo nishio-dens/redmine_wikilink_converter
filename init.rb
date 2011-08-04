@@ -16,6 +16,7 @@ class LinkConvertHelper
   def get_url(key, value)
     url = @@url_list[key]
     if url
+      url.strip!
       return url + value
     end
   end
