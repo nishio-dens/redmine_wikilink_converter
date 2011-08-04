@@ -5,8 +5,8 @@ class AddLinkController < ApplicationController
   end
 
   def add
-    replace_string = params[:replace_string]
-    replace_url = params[:replace_url]
+    replace_string = params[:replace_data][:replace_string]
+    replace_url = params[:replace_data][:replace_url]
     
     if replace_string && replace_url
       data = UrlStores.new

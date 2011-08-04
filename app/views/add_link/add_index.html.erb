@@ -1,3 +1,13 @@
 <h2>新規データ登録</h2>
 
-<%= link_to("add testval", :controller => 'add_link', :action => 'add', :replace_string => "testkey", :replace_url => "http://google.com") %>
+<% form_tag( {:action => 'add', :controller => 'add_link' } ) do %>
+
+Replace key: 
+<%= text_field_tag "replace_data[replace_string]", "", { :size => 40 } %> <br />
+
+Replace url:
+<%= text_field_tag "replace_data[replace_url]", "", { :size => 40 } %> <br />
+
+<%= submit_tag "Add" %>
+<% end %>
+
