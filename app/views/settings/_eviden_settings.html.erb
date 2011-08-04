@@ -1,0 +1,16 @@
+<p>
+  <table> 
+    <tr><td> Replace String </td><td>
+        <%= text_field_tag('settings[replace_string]', @settings['replace_string'])%>
+    </td></tr>
+    <tr><td> Address </td><td>
+        <%= text_field_tag('settings[replace_address]', @settings['replace_address'], :size => 80)%>
+    </td></tr>
+  </table>
+</p>
+
+<% if @settings['testval'] %>
+<% @settings['testval'].each do | val | %>
+<p> data: <%= val %> </p>
+<% end %>
+

@@ -38,6 +38,11 @@ Redmine::Plugin.register :redmine_wikilink_converter do
   author 'Shinsuke Nishio'
   description 'wiki link converter'
   version '0.0.1'
+
+  settings :default => {
+    'replace_string' => 'key',
+    'replace_address' => 'testurl'
+  }, :partial => 'settings/eviden_settings'
   
   Redmine::WikiFormatting::Macros.register do
     desc "nothing"
