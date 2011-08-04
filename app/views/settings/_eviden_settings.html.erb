@@ -1,22 +1,30 @@
-<p>
-  <table> 
-    <tr><td> Replace String </td><td>
-        <%= text_field_tag('settings[replace_string]', @settings['replace_string'])%>
-    </td></tr>
-    <tr><td> Address </td><td>
-        <%= text_field_tag('settings[replace_address]', @settings['replace_address'], :size => 80)%>
-    </td></tr>
-  </table>
-</p>
+<h3> 登録済み情報一覧 </h3>
 
+<table boader="1" width="70%">
+  <tr>
+    <th>id</th>
+    <th>置き換える文字列</th>
+    <th>URL</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @datalist=UrlStores.all %>
+  <% if @datalist %>
+  <% @datalist.each do | data | %>
+  <tr class="changeset <%= cycle 'even', 'odd' %>">
+    <td> <%= data.id %> </td>
+    <td> <%= data.replace_string %> </td>
+    <td> <%= data.replace_url %> </td>
+    <td> <a href="none">編集</a> </td>
+    <td> <a href="none">削除</a> </td>
+  </tr>
+  <% end %>
+  <% end %>
+</table>
+
+<h3>操作</h3>
 <%= link_to('新規登録', :controller => 'add_link', :action => 'add_index') %>
 
-<%= debug( UrlStores.all ) %>
-<% if false %>
-<% @replaceData = UrlStores.new %>
-<% @replaceData.replace_string = "dbtestkey1" %>
-<% @replaceData.replace_url = "dbtest url" %>
-<% @replaceData.save %>
-<% end %>
 
 
