@@ -2,12 +2,15 @@
 require 'redmine'
 
 class LinkConvertHelper
-  @@url_list = { 
-    "infosys" => "https://etrack.timedia.co.jp/EasyTracker/board/IssueView.aspx?board_id=B_0006&issue_id=B_0006_" ,
-    "業務" => "https://etrack.timedia.co.jp/EasyTracker/board/IssueView.aspx?board_id=B_0234&issue_id=B_0234_"
-  }
+  @@url_list = {}
   
   def initialize
+    db = UrlStores.all
+    if db
+      db.each do | data |
+        @@url_list[ data.replace_string ] = data.replace_url
+      end
+    end
   end
 
   def get_url(key, value)
@@ -34,9 +37,9 @@ class LinkConvertHelper
 end
 
 Redmine::Plugin.register :redmine_wikilink_converter do
-  name 'Redmine Wikilink Converter plugin'
+  name 'Redmine Eviden Wikilink Converter plugin'
   author 'Shinsuke Nishio'
-  description 'wiki link converter'
+  description 'evidenへのリンクを作成するwikiプラグイン'
   version '0.0.1'
 
   settings :default => {

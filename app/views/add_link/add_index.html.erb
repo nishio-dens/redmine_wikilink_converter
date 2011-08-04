@@ -2,10 +2,10 @@
 
 <% form_tag( {:action => 'add', :controller => 'add_link' } ) do %>
 
-Replace key: 
+置き換える文字列: 
 <%= text_field_tag "replace_data[replace_string]", "", { :size => 40 } %> <br />
 
-Replace url:
+置き換えるURL:
 <%= text_field_tag "replace_data[replace_url]", "", { :size => 40 } %> <br />
 
 <%= submit_tag "新規登録" %>

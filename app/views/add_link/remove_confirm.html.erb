@@ -1,0 +1,11 @@
+<h2>データ削除 確認</h2>
+
+<% if @remove_data %>
+<p> データを削除してもよろしいですか </p>
+<p> 置き換える文字: <%= @remove_data.replace_string %> </p>
+<p> 置き換えるURL: <%= @remove_data.replace_url %> </p>
+<br />
+<%= link_to('削除', :controller => 'add_link', :action => 'remove', :data_id => @remove_data.id) %>
+<% else %>
+<p> データを削除できません </p>
+<% end %>
