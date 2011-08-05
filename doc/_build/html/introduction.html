@@ -80,6 +80,14 @@ Wiki内で {{wikilink( Redmine課題, 440)}} とした場合、
 <a class="reference external image-reference" href="_images/setting3.png"><img alt="_images/setting3.png" src="_images/setting3.png" style="width: 406.0px; height: 193.0px;" /></a>
 <p>図5:Linkの新規作成</p>
 </div>
+<div class="section" id="id4">
+<h2>インストール方法<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Redmineの設置ディレクトリに移動後、以下のコマンドを実行してください。</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ruby script/plugin install git://github.com/nishio-dens/redmine_wikilink_converter.git
+<span class="nv">$ </span>rake db:migrate_plugins
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -94,6 +102,7 @@ Wiki内で {{wikilink( Redmine課題, 440)}} とした場合、
 <li><a class="reference external" href="#id1">機能</a></li>
 <li><a class="reference external" href="#id2">本プラグインの使い方</a></li>
 <li><a class="reference external" href="#id3">設定方法</a></li>
+<li><a class="reference external" href="#id4">インストール方法</a></li>
 </ul>
 </li>
 </ul>

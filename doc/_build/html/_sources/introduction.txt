@@ -66,3 +66,13 @@ Wiki内で {{wikilink( Redmine課題, 440)}} とした場合、
 
 図5:Linkの新規作成
 
+
+インストール方法
+---------------------------
+
+Redmineの設置ディレクトリに移動後、以下のコマンドを実行してください。
+
+.. code-block:: bash
+
+    $ ruby script/plugin install git://github.com/nishio-dens/redmine_wikilink_converter.git
+    $ rake db:migrate_plugins
