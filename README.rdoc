@@ -1,3 +1,18 @@
 = wikilink_converter
 
-Description goes here
+== description
+
+This plugin provides wikimarco to create URL link easily.
+For example, you can write macro
+
+    {{wikilink( issue, 440 )}}
+
+wikilink plugin create URL like http://redmine.org/issue/440 .
+
+
+== How to Install
+
+Run command as below
+
+   $ ruby script/plugin install git://github.com/nishio-dens/redmine_wikilink_converter.git
+   $ rake db:migrate_plugins
